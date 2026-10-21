@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grapevine Collection | Handmade Shops</title>
+  <style>
+    :root {
+      --deep-green: #1a3a2a;
+      --sage: #5c7a6a;
+      --gold: #c9a87c;
+      --cream: #f8f5f0;
+      --text: #2c2c2c;
+      --light: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background-color: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--deep-green), #2d5a42);
+      color: var(--light);
+      text-align: center;
+      padding: 3.5rem 1.5rem 2.5rem;
+    }
+
+    header h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+      color: var(--sage);
+    }
+
+    .shops {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .shop-card {
+      flex: 1;
+      min-width: 0;
+      background: var(--light);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .shop-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-bg {
+      height: 140px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .card-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(255,255,255,0.92));
+    }
+
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: -70px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-wrap img {
+      width: 130px;
+      height: auto;
+      background: white;
+      border-radius: 12px;
+      padding: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .card-content {
+      padding: 1.2rem 1.4rem 1.6rem;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shop-card h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      color: var(--deep-green);
+      margin-bottom: 0.6rem;
+    }
+
+    .shop-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .shop-card a {
+      display: inline-block;
+      background: var(--deep-green);
+      color: var(--light);
+      text-decoration: none;
+      padding: 0.65rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+      margin-top: auto;
+    }
+
+    .shop-card a:hover {
+      background: #2d5a42;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.8rem 1rem;
+      background: var(--deep-green);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 900px) {
+      .shops {
+        flex-wrap: wrap;
+      }
+      .shop-card {
+        flex: 1 1 280px;
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.1rem;
+      }
+      .shops {
+        flex-direction: column;
+        align-items: center;
+      }
+      .shop-card {
+        width: 100%;
+        max-width: 380px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Grapevine Collection</h1>
+    <p>Handcrafted pieces inspired by the beauty of the vine</p>
+  </header>
+
+  <main>
+    <p class="intro">Explore three distinct shops, each offering unique creations rooted in the grapevine aesthetic.</p>
+
+    <div class="shops">
+      <article class="shop-card">
+        <div class="card-bg" style="background-image: url('bg-forge.jpg');"></div>
+        <div class="logo-wrap">
+          <img src="logo-forge.jpg" alt="Grapevine Forge Logo">
+        </div>
+        <div class="card-content">
+          <h2>Grapevine Forge</h2>
+          <p>Hand-forged metalwork and durable pieces crafted with traditional techniques. Explore solid, lasting designs that bring strength and artistry together.</p>
+          <a href="https://grapevineforge.etsy.com" target="_blank" rel="noopener noreferrer">Visit Grapevine Forge</a>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <div class="card-bg" style="background-image: url('bg-lightworks.jpg');"></div>
+        <div class="logo-wrap">
+          <img src="logo-lightworks.jpg" alt="Grapevine Lightworks Logo">
+        </div>
+        <div class="card-content">
+          <h2>Grapevine Lightworks</h2>
+          <p>Illuminating designs that blend form and function. Discover lighting and luminous accents crafted to warm any space with a natural, vineyard-inspired glow.</p>
+          <a href="https://grapevinelightworks.etsy.com" target="_blank" rel="noopener noreferrer">Visit Grapevine Lightworks</a>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <div class="card-bg" style="background-image: url('bg-inspired.jpg');"></div>
+        <div class="logo-wrap">
+          <img src="logo-inspired.jpg" alt="Grapevine Inspired Logo">
+        </div>
+        <div class="card-content">
+          <h2>Grapevine Inspired</h2>
+          <p>Thoughtful creations drawn from the organic beauty of grapevines. A collection of inspired pieces for home, garden, and everyday living.</p>
+          <a href="https://grapevineinspired.etsy.com" target="_blank" rel="noopener noreferrer">Visit Grapevine Inspired</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Grapevine Collection. All shops hosted on Etsy.</p>
+  </footer>
+</body>
+</html>
