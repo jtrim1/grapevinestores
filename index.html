@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grapevine Stores | Handmade Shops</title>
+  <title>Grapevine Stores | Handmade Treasures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --deep-green: #1a3a2a;
-      --sage: #5c7a6a;
-      --gold: #c9a87c;
-      --cream: #f8f5f0;
-      --text: #2c2c2c;
-      --light: #ffffff;
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --text-muted: #5a5a5a;
+      --accent: #3d5a3d;
+      --accent-light: #e8f0e8;
+      --border: #e8e8e8;
+      --shadow: 0 4px 24px rgba(0,0,0,0.06);
+      --radius: 16px;
     }
 
     * {
@@ -21,219 +27,346 @@
     }
 
     body {
-      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-      background-color: var(--cream);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
     header {
-      background: linear-gradient(135deg, var(--deep-green), #2d5a42);
-      color: var(--light);
-      text-align: center;
-      padding: 3.5rem 1.5rem 2.5rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.9);
     }
 
-    header h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2.6rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-      margin-bottom: 0.4rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      max-width: 580px;
-      margin: 0 auto;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 3rem;
-    }
-
-    .intro {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      font-size: 1.05rem;
-      color: var(--sage);
-    }
-
-    .shops {
+    nav {
       display: flex;
-      gap: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: var(--accent);
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
       justify-content: center;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2f462f;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-light);
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.25rem;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .shops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
     }
 
     .shop-card {
-      flex: 1;
-      min-width: 0;
-      background: var(--light);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .shop-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
     }
 
-    .card-bg {
-      height: 140px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-
-    .card-bg::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(255,255,255,0.92));
-    }
-
-    .logo-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: -70px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .logo-wrap img {
-      width: 130px;
-      height: auto;
-      background: white;
+    .shop-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
       border-radius: 12px;
-      padding: 8px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      margin-bottom: 20px;
     }
 
-    .card-content {
-      padding: 1.2rem 1.4rem 1.6rem;
-      text-align: center;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .shop-card h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.45rem;
-      color: var(--deep-green);
-      margin-bottom: 0.6rem;
+    .shop-tag {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
     }
 
     .shop-card p {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 1.2rem;
+      color: var(--text-muted);
       flex-grow: 1;
+      margin-bottom: 24px;
+      font-size: 0.98rem;
     }
 
-    .shop-card a {
-      display: inline-block;
-      background: var(--deep-green);
-      color: var(--light);
-      text-decoration: none;
-      padding: 0.65rem 1.4rem;
-      border-radius: 6px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: background 0.2s ease;
-      margin-top: auto;
+    .shop-meta {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 20px;
     }
 
-    .shop-card a:hover {
-      background: #2d5a42;
+    .about {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 56px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: 0 auto 16px;
+      color: var(--text-muted);
     }
 
     footer {
+      padding: 48px 0 32px;
       text-align: center;
-      padding: 1.8rem 1rem;
-      background: var(--deep-green);
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
     }
 
-    @media (max-width: 900px) {
-      .shops {
-        flex-wrap: wrap;
-      }
-      .shop-card {
-        flex: 1 1 280px;
-        max-width: 400px;
-      }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.1rem;
-      }
-      .shops {
-        flex-direction: column;
-        align-items: center;
-      }
-      .shop-card {
-        width: 100%;
-        max-width: 380px;
-      }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hero { padding: 72px 0 56px; }
+      .about { padding: 36px 24px; }
+      .shops-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Grapevine Stores</h1>
-    <p>Handcrafted pieces inspired by beauty and tradition</p>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="images/logo.png" alt="Grapevine Stores Logo">
+          Grapevine Stores
+        </div>
+        <ul class="nav-links">
+          <li><a href="#shops">Shops</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="https://www.etsy.com/shop/grapevineforge" target="_blank">Forge</a></li>
+          <li><a href="https://www.etsy.com/shop/grapevinelightworks" target="_blank">Lightworks</a></li>
+          <li><a href="https://www.etsy.com/shop/grapevineinspired" target="_blank">Inspired</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <p class="intro">Explore our three distinct shops, each offering unique creations rooted in the values that drive us:  quality, character, and durability.</p>
-
-    <div class="shops">
-      <article class="shop-card">
-        <div class="card-bg" style="background-image: url('bg-forge.jpg');"></div>
-        <div class="card-content">
-			<a href="https://grapevineforge.etsy.com" target="_blank" rel="noopener noreferrer">Visit Grapevine Forge</a>
-          <h2>Grapevine Forge</h2>
-          <p>Hand-forged metalwork and durable pieces crafted with traditional techniques. Explore solid, lasting designs that bring strength and artistry together.</p>
-          
+    <section class="hero">
+      <div class="container">
+        <h1>Handmade Treasures<br>from the Heart of Ohio</h1>
+        <p>A small, family-owned workshop crafting high-quality, hand-forged metalwork, laser-engraved designs, and inspirational wooden art. Explore our three Etsy shops below.</p>
+        <div class="cta-row">
+          <a href="#shops" class="btn btn-primary">Explore Our Shops</a>
+          <a href="https://grapevinestores.com/" target="_blank" class="btn btn-outline">Visit Main Site</a>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="shop-card">
-        <div class="card-bg" style="background-image: url('bg-lightworks.jpg');"></div>
-        <div class="card-content">
-		<a href="https://grapevinelightworks.etsy.com" target="_blank" rel="noopener noreferrer">Visit Grapevine Lightworks</a>
-          <h2>Grapevine Lightworks</h2>
-          <p>Laser engraved gaming designs that blend form and function. Discover unique and useful tools and decor crafted to boost the enjoyment of your favorite tabletop games.</p>
-          
+    <section class="section" id="shops">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Shops</h2>
+          <p>Three distinct collections, one commitment to quality craftsmanship. Click through to browse each shop on Etsy.</p>
         </div>
-      </article>
 
-      <article class="shop-card">
-        <div class="card-bg" style="background-image: url('bg-inspired.jpg');"></div>
-        <div class="card-content">
-          <a href="https://grapevineinspired.etsy.com" target="_blank" rel="noopener noreferrer">Visit Grapevine Inspired</a>
-		  <h2>Grapevine Inspired</h2>
-          <p>Handmade treasures that bring inspiration and encouragement your heart and home. I use only the highest quality materials in every creation, guaranteeing superior craftsmanship, durability, and artistic excellence.</p>
-          
+        <div class="shops-grid">
+          <!-- Grapevine Forge -->
+          <article class="shop-card">
+            <img src="images/forge.jpg" alt="Hand forged metal skewers" class="shop-image">
+            <span class="shop-tag">Hand-Forged Metal</span>
+            <h3>Grapevine Forge</h3>
+            <p class="shop-meta">Fine Hand Forged Treasures · West Milton, Ohio</p>
+            <p>Hand-forged metalwork and durable pieces crafted with traditional techniques. Explore solid, lasting designs that bring strength and artistry together. A little bit of history right here in the present — from elegant BBQ skewers and campfire tools to classic blacksmith creations.</p>
+            <a href="https://www.etsy.com/shop/grapevineforge" target="_blank" class="btn btn-primary">Visit Grapevine Forge</a>
+          </article>
+
+          <!-- Grapevine Lightworks -->
+          <article class="shop-card">
+            <img src="images/lightworks.jpg" alt="Laser engraved game tokens" class="shop-image">
+            <span class="shop-tag">Laser Engraved</span>
+            <h3>Grapevine Lightworks</h3>
+            <p class="shop-meta">Gaming Tools & Decor · West Milton, Ohio</p>
+            <p>Laser engraved gaming designs that blend form and function. Discover unique and useful tools and decor crafted to boost the enjoyment of your favorite tabletop games — from initiative tokens and gift tags to practical everyday items with a playful twist.</p>
+            <a href="https://www.etsy.com/shop/grapevinelightworks" target="_blank" class="btn btn-primary">Visit Grapevine Lightworks</a>
+          </article>
+
+          <!-- Grapevine Inspired -->
+          <article class="shop-card">
+            <img src="images/inspired.jpg" alt="Wooden scripture wall art from Grapevine Inspired" class="shop-image">
+            <span class="shop-tag">Wooden Inspiration</span>
+            <h3>Grapevine Inspired</h3>
+            <p class="shop-meta">Scripture & Encouragement · West Milton, Ohio</p>
+            <p>Handmade treasures that bring inspiration and encouragement to your heart and home. I use only the highest quality materials in every creation, guaranteeing superior craftsmanship, durability, and artistic excellence. Beautiful wooden signs, layered scripture art, and custom pieces.</p>
+            <a href="https://www.etsy.com/shop/grapevineinspired" target="_blank" class="btn btn-primary">Visit Grapevine Inspired</a>
+          </article>
         </div>
-      </article>
-    </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" style="padding-top: 20px;">
+      <div class="container">
+        <div class="about">
+          <h2>About Grapevine Stores</h2>
+          <p>We’re a small, family-owned business dedicated to crafting the highest quality, handmade products. Here you can explore all of our stores in one convenient place.</p>
+          <p>All items are hand made in the USA and ship directly from our workshop in West Milton, Ohio. We’re happy to discuss custom ideas — just reach out through any of the shops.</p>
+          <p style="margin-top: 24px; font-size: 0.95rem;">Prefer shopping on Etsy? You’ll find the same great products and service in each of our shops linked above.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; Grapevine Collection. All shops hosted on Etsy.</p>
+    <div class="container">
+      <p>Grapevine Stores · Handmade in West Milton, Ohio</p>
+      <p style="margin-top: 8px;">
+        <a href="https://www.etsy.com/shop/grapevineforge" target="_blank">Forge</a> · 
+        <a href="https://www.etsy.com/shop/grapevinelightworks" target="_blank">Lightworks</a> · 
+        <a href="https://www.etsy.com/shop/grapevineinspired" target="_blank">Inspired</a>
+      </p>
+      <p style="margin-top: 16px; font-size: 0.8rem;">© Grapevine Stores</p>
+    </div>
   </footer>
 </body>
 </html>
