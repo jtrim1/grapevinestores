@@ -271,6 +271,20 @@
       .about { padding: 36px 24px; }
       .shops-grid { grid-template-columns: 1fr; }
     }
+
+    .no-decoration {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    
+    .no-decoration:hover,
+    .no-decoration:focus,
+    .no-decoration:active {
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -314,7 +328,7 @@
         <div class="shops-grid">
           <!-- Grapevine Forge -->
           <article class="shop-card">
-           <a href="https://www.etsy.com/shop/grapevineforge" target="_blank">
+           <a href="https://www.etsy.com/shop/grapevineforge" target="_blank" class="no-decoration">
             <img src="images/forge.jpg" alt="Hand forged metal skewers" class="shop-image">
             <span class="shop-tag">Hand-Forged Metal</span>
             <h3>Grapevine Forge</h3>
@@ -326,21 +340,25 @@
 
           <!-- Grapevine Lightworks -->
           <article class="shop-card">
+            <a href="https://www.etsy.com/shop/grapevinelightworks" target="_blank" class="no-decoration">
             <img src="images/lightworks.jpg" alt="Laser engraved game tokens" class="shop-image">
             <span class="shop-tag">Laser Engraved</span>
             <h3>Grapevine Lightworks</h3>
             <p class="shop-meta">Gaming Tools & Decor · West Milton, Ohio</p>
             <p>Laser engraved gaming designs that blend form and function. Discover unique and useful tools and decor crafted to boost the enjoyment of your favorite tabletop games — from initiative tokens and gift tags to practical everyday items with a playful twist.</p>
+            </a>
             <a href="https://www.etsy.com/shop/grapevinelightworks" target="_blank" class="btn btn-primary">Visit Grapevine Lightworks</a>
           </article>
 
           <!-- Grapevine Inspired -->
           <article class="shop-card">
+            <a href="https://www.etsy.com/shop/grapevineinspired" target="_blank" class="no-decoration">
             <img src="images/inspired.jpg" alt="Wooden scripture wall art from Grapevine Inspired" class="shop-image">
             <span class="shop-tag">Wooden Inspiration</span>
             <h3>Grapevine Inspired</h3>
             <p class="shop-meta">Scripture & Encouragement · West Milton, Ohio</p>
             <p>Handmade treasures that bring inspiration and encouragement to your heart and home. I use only the highest quality materials in every creation, guaranteeing superior craftsmanship, durability, and artistic excellence. Beautiful wooden signs, layered scripture art, and custom pieces.</p>
+            </a>
             <a href="https://www.etsy.com/shop/grapevineinspired" target="_blank" class="btn btn-primary">Visit Grapevine Inspired</a>
           </article>
         </div>
